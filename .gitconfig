@@ -1,0 +1,10 @@
+[user]
+    name = iaia
+    email = iaia72160@gmail.com
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+[push]
+    default = simple
+

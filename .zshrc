@@ -57,4 +57,4 @@ case "${OSTYPE}" in
 		;;
 esac
 cd
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
