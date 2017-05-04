@@ -1,9 +1,8 @@
 " Option {{{1
 language C
 
-" colorscheme
+" background
 set background=dark
-colorscheme desert
 
 "ファイル名補完時の挙動
 set wildmode=longest,list,full
@@ -12,9 +11,6 @@ set wildmode=longest,list,full
 set nocompatible 
 " ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
 filetype plugin indent on
-
-" 色づけをオン
-syntax on
 
 " コマンドライン補完を便利に
 set wildmenu
@@ -199,12 +195,21 @@ if dein#load_state('~/.vim/dein')
     call dein#add('thinca/vim-quickrun')
     call dein#add('tyru/open-browser.vim')
     call dein#add('rust-lang/rust.vim')
+    call dein#add('sjl/badwolf')
+    " call dein#add('chriskempson/tomorrow-theme')
+    " call dein#add('w0ng/vim-hybrid')
+    " call dein#add('tomasr/molokai')
     call dein#end()
     call dein#save_state()
 endif
 
-"filetype plugin indent on
-"syntax on
+filetype plugin indent on
+
+" Make the gutters darker than the background.
+let g:badwolf_darkgutter = 1
+colorscheme badwolf
+syntax on
+
 
 " open-browser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
@@ -249,3 +254,5 @@ function! s:open_write_blog()
 endfunction
 
 " }}}
+
+
