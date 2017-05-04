@@ -196,19 +196,15 @@ if dein#load_state('~/.vim/dein')
     call dein#add('tyru/open-browser.vim')
     call dein#add('rust-lang/rust.vim')
     call dein#add('sjl/badwolf')
-    " call dein#add('chriskempson/tomorrow-theme')
-    " call dein#add('w0ng/vim-hybrid')
-    " call dein#add('tomasr/molokai')
     call dein#end()
     call dein#save_state()
 endif
 
 filetype plugin indent on
 
-" Make the gutters darker than the background.
-let g:badwolf_darkgutter = 1
-colorscheme badwolf
+colorscheme desert
 syntax on
+set t_Co=256
 
 
 " open-browser
@@ -233,6 +229,27 @@ let g:quickrun_config['markdown'] = {
 " mru
 let MRU_File = $HOME . '/.vim/.vim_mru_files'
 
+" }}}
+
+" junk file {{{
+command! -nargs=0 JunkFile call s:open_junk_file()
+function! s:open_junk_file()
+
+    " 曜日を英語で用いるため
+    let language = v:lc_time
+    execute ":silent! language time " . "C"
+    let l:junk_dir = $HOME . '/.vim/.vim_junk'. strftime('/%Y/%m/%d-%a')
+    execute ":silent! language time " . language
+    if !isdirectory(l:junk_dir)
+        call mkdir(l:junk_dir, 'p')
+    endif
+
+    let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
+    if l:filename != ''
+        execute 'edit ' .  l:filename
+    endif
+endfunction
+nnoremap ,jf :JunkFile
 " }}}
 
 " Blog {{{1
