@@ -195,7 +195,6 @@ if dein#load_state('~/.vim/dein')
     call dein#add('thinca/vim-quickrun')
     call dein#add('tyru/open-browser.vim')
     call dein#add('rust-lang/rust.vim')
-    call dein#add('sjl/badwolf')
     call dein#end()
     call dein#save_state()
 endif
