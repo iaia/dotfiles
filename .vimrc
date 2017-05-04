@@ -1,11 +1,22 @@
 " Option {{{1
 language C
 
+" colorscheme
 set background=dark
 colorscheme desert
 
+"ファイル名補完時の挙動
+set wildmode=longest,list,full
+
+" Vi互換モードをオフ（Vimの拡張機能を有効）
 set nocompatible 
+" ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
+filetype plugin indent on
+
+" 色づけをオン
 syntax on
+
+" コマンドライン補完を便利に
 set wildmenu
 
 " タイプ途中のコマンドを画面最下行に表示
@@ -16,6 +27,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
 
+" 検索語を強調表示（<C-L>を押すと現在の強調表示を解除する）
 set hlsearch
 
 " helpを日本語優先
@@ -66,6 +78,28 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" 全角スペース・行末のスペース・タブの可視化
+if has("syntax")
+    syntax on
+
+    " PODバグ対策
+    syn sync fromstart
+
+    function! ActivateInvisibleIndicator()
+        " 下の行の"　"は全角スペース
+        syntax match InvisibleJISX0208Space "　" display containedin=ALL
+        highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
+        "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
+        "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
+        "syntax match InvisibleTab "\t" display containedin=ALL
+        "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
+    endf
+    augroup invisible
+        autocmd!  invisible
+        autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+    augroup END
+endif
+
 " foldingに関する設定
 set foldmethod=marker
 
@@ -85,10 +119,12 @@ command! -nargs=0 UndoRefresh call s:undo_refresh()
 function! s:undo_refresh()
     execute ":!rm -rf ~/.vim/.vimundo/*"
 endfunction
+
+set matchpairs+=<:>
+
 " }}}
 
 " Mappings {{{1
-
 
 nnoremap j gj
 nnoremap gj j
@@ -149,7 +185,7 @@ cmap <C-n> <Down>
 
 " }}}
 
-" dein
+" plugin(dein), ftplugin {{{1
 
 if &compatible
     set nocompatible
@@ -167,5 +203,49 @@ if dein#load_state('~/.vim/dein')
     call dein#save_state()
 endif
 
-filetype plugin indent on
-syntax on
+"filetype plugin indent on
+"syntax on
+
+" open-browser
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+" quickrun
+let g:quickrun_config = {
+            \ "hook/output_encode/enable": 1,
+            \ "hook/output_encode/encoding": "utf-8",
+            \}
+let g:quickrun_config['ruby'] = {
+            \ "hook/output_encode/enable": 1,
+            \ "hook/output_encode/encoding": "utf-8",
+            \}
+let g:quickrun_config['markdown'] = {
+            \ 'type': 'markdown/pandoc',
+            \ 'outputter': 'browser',
+            \}
+
+" mru
+let MRU_File = $HOME . '/.vim/.vim_mru_files'
+
+" }}}
+
+" Blog {{{1
+command! -nargs=0 WriteBlog call s:open_write_blog()
+function! s:open_write_blog()
+
+    let language = v:lc_time
+    execute ":silent! language time " . "C"
+    let l:blog_dir = $HOME . '/Documents/blog'. strftime('/%Y/%m/%d-%a')
+    execute ":silent! language time " . language
+    if !isdirectory(l:blog_dir)
+        call mkdir(l:blog_dir, 'p')
+    endif
+
+    let l:filename = input('Blog title: ', l:blog_dir.strftime('/'))
+    if l:filename != '
+        execute 'edit ' . l:filename
+    endif
+endfunction
+
+" }}}
