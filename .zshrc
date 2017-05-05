@@ -49,12 +49,12 @@ alias vin='vim'
 export EDITOR=vim
 
 case "${OSTYPE}" in
-	freebsd*|darwin*)
-		alias ls="ls -p -G -w"
-		;;
-	linux*)
-		alias ls="ls --color"
-		;;
+  freebsd*|darwin*)
+    alias ls="ls -p -G -w"
+    ;;
+  linux*)
+    alias ls="ls --color"
+    ;;
 esac
 cd
 #source $HOME/.cargo/env

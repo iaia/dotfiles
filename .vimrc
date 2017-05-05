@@ -70,30 +70,32 @@ set number
 set notimeout ttimeout ttimeoutlen=200
 
 " indent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set expandtab
+set autoindent
 
 " 全角スペース・行末のスペース・タブの可視化
 if has("syntax")
-    syntax on
+  syntax on
 
-    " PODバグ対策
-    syn sync fromstart
+  " PODバグ対策
+  syn sync fromstart
 
-    function! ActivateInvisibleIndicator()
-        " 下の行の"　"は全角スペース
-        syntax match InvisibleJISX0208Space "　" display containedin=ALL
-        highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
-        "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
-        "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
-        "syntax match InvisibleTab "\t" display containedin=ALL
-        "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
-    endf
-    augroup invisible
-        autocmd!  invisible
-        autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
-    augroup END
+  function! ActivateInvisibleIndicator()
+    " 下の行の"　"は全角スペース
+    syntax match InvisibleJISX0208Space "　" display containedin=ALL
+    highlight InvisibleJISX0208Space term=underline ctermbg=Blue guibg=darkgray gui=underline
+    "syntax match InvisibleTrailedSpace "[ \t]\+$" display containedin=ALL
+    "highlight InvisibleTrailedSpace term=underline ctermbg=Red guibg=NONE gui=undercurl guisp=darkorange
+    "syntax match InvisibleTab "\t" display containedin=ALL
+    "highlight InvisibleTab term=underline ctermbg=white gui=undercurl guisp=darkslategray
+  endf
+  augroup invisible
+    autocmd!  invisible
+    autocmd BufNew,BufRead * call ActivateInvisibleIndicator()
+  augroup END
 endif
 
 " foldingに関する設定
@@ -107,13 +109,13 @@ set clipboard=unnamed,autoselect
 
 " undoの履歴を保存
 if has('persistent_undo')
-    set undodir=~/.vim/.vimundo
-    set undofile
+  set undodir=~/.vim/.vimundo
+  set undofile
 endif
 
 command! -nargs=0 UndoRefresh call s:undo_refresh()
 function! s:undo_refresh()
-    execute ":!rm -rf ~/.vim/.vimundo/*"
+  execute ":!rm -rf ~/.vim/.vimundo/*"
 endfunction
 
 set matchpairs+=<:>
@@ -184,19 +186,19 @@ cmap <C-n> <Down>
 " plugin(dein), ftplugin {{{1
 
 if &compatible
-    set nocompatible
+  set nocompatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.vim/dein')
-    call dein#begin('~/.vim/dein')
-    call dein#add('Shougo/dein.vim')
-    call dein#add('vim-scripts/mru.vim')
-    call dein#add('thinca/vim-quickrun')
-    call dein#add('tyru/open-browser.vim')
-    call dein#add('rust-lang/rust.vim')
-    call dein#end()
-    call dein#save_state()
+  call dein#begin('~/.vim/dein')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('vim-scripts/mru.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('rust-lang/rust.vim')
+  call dein#end()
+  call dein#save_state()
 endif
 
 filetype plugin indent on
@@ -213,17 +215,17 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 " quickrun
 let g:quickrun_config = {
-            \ "hook/output_encode/enable": 1,
-            \ "hook/output_encode/encoding": "utf-8",
-            \}
+      \ "hook/output_encode/enable": 1,
+      \ "hook/output_encode/encoding": "utf-8",
+      \}
 let g:quickrun_config['ruby'] = {
-            \ "hook/output_encode/enable": 1,
-            \ "hook/output_encode/encoding": "utf-8",
-            \}
+      \ "hook/output_encode/enable": 1,
+      \ "hook/output_encode/encoding": "utf-8",
+      \}
 let g:quickrun_config['markdown'] = {
-            \ 'type': 'markdown/pandoc',
-            \ 'outputter': 'browser',
-            \}
+      \ 'type': 'markdown/pandoc',
+      \ 'outputter': 'browser',
+      \}
 
 " mru
 let MRU_File = $HOME . '/.vim/.vim_mru_files'
@@ -234,19 +236,19 @@ let MRU_File = $HOME . '/.vim/.vim_mru_files'
 command! -nargs=0 JunkFile call s:open_junk_file()
 function! s:open_junk_file()
 
-    " 曜日を英語で用いるため
-    let language = v:lc_time
-    execute ":silent! language time " . "C"
-    let l:junk_dir = $HOME . '/.vim/.vim_junk'. strftime('/%Y/%m/%d-%a')
-    execute ":silent! language time " . language
-    if !isdirectory(l:junk_dir)
-        call mkdir(l:junk_dir, 'p')
-    endif
+  " 曜日を英語で用いるため
+  let language = v:lc_time
+  execute ":silent! language time " . "C"
+  let l:junk_dir = $HOME . '/.vim/.vim_junk'. strftime('/%Y/%m/%d-%a')
+  execute ":silent! language time " . language
+  if !isdirectory(l:junk_dir)
+    call mkdir(l:junk_dir, 'p')
+  endif
 
-    let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
-    if l:filename != ''
-        execute 'edit ' .  l:filename
-    endif
+  let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
+  if l:filename != ''
+    execute 'edit ' .  l:filename
+  endif
 endfunction
 nnoremap ,jf :JunkFile
 " }}}
@@ -255,18 +257,18 @@ nnoremap ,jf :JunkFile
 command! -nargs=0 WriteBlog call s:open_write_blog()
 function! s:open_write_blog()
 
-    let language = v:lc_time
-    execute ":silent! language time " . "C"
-    let l:blog_dir = $HOME . '/Documents/blog'. strftime('/%Y/%m/%d-%a')
-    execute ":silent! language time " . language
-    if !isdirectory(l:blog_dir)
-        call mkdir(l:blog_dir, 'p')
-    endif
+  let language = v:lc_time
+  execute ":silent! language time " . "C"
+  let l:blog_dir = $HOME . '/Documents/blog'. strftime('/%Y/%m/%d-%a')
+  execute ":silent! language time " . language
+  if !isdirectory(l:blog_dir)
+    call mkdir(l:blog_dir, 'p')
+  endif
 
-    let l:filename = input('Blog title: ', l:blog_dir.strftime('/'))
-    if l:filename != '
-        execute 'edit ' . l:filename
-    endif
+  let l:filename = input('Blog title: ', l:blog_dir.strftime('/'))
+  if l:filename != '
+    execute 'edit ' . l:filename
+  endif
 endfunction
 
 " }}}
