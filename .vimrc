@@ -264,7 +264,7 @@ function! s:open_write_blog()
     endif
 
     let l:filename = input('Blog title: ', l:blog_dir.strftime('/'))
-    if l:filename != '
+    if l:filename != ''
         execute 'edit ' . l:filename
     endif
 endfunction

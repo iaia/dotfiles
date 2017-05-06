@@ -58,3 +58,7 @@ case "${OSTYPE}" in
 esac
 cd
 #source $HOME/.cargo/env
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
