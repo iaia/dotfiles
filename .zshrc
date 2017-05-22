@@ -43,7 +43,7 @@ setopt nolistbeep
 setopt no_beep
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-alias vim='/usr/bin/vim'
+alias vim='/usr/local/bin/vim'
 alias vi='vim'
 alias vin='vim'
 export EDITOR=vim
@@ -62,3 +62,4 @@ cd
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
