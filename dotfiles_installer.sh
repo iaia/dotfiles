@@ -9,4 +9,5 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ~/dotfiles/installer.sh ~/.vim/dein
 rm ~/dotfiles/installer.sh
 mkdir ~/.ssh/
+mkdir ~/.vim/.vimundo
 
