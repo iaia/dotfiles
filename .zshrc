@@ -11,9 +11,6 @@ PROMPT="$GREEN%n@%m$DEFAULT %% "
 RPROMPT="[$PINK%~$DEFAULT]"
 setopt PROMPT_SUBST
 
-#export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-##export MANPATH=/opt/local/man:$MANPATH
-
 bindkey -e
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -43,7 +40,7 @@ setopt nolistbeep
 setopt no_beep
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-alias vim='/usr/local/bin/vim'
+alias vim='/usr/bin/vim'
 alias vi='vim'
 alias vin='vim'
 export EDITOR=vim
@@ -56,10 +53,3 @@ case "${OSTYPE}" in
     alias ls="ls --color"
     ;;
 esac
-cd
-#source $HOME/.cargo/env
-
-# rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-

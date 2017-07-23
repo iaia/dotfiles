@@ -196,7 +196,6 @@ if dein#load_state('~/.vim/dein')
   call dein#add('vim-scripts/mru.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tyru/open-browser.vim')
-  call dein#add('rust-lang/rust.vim')
   call dein#end()
   call dein#save_state()
 endif
@@ -251,25 +250,6 @@ function! s:open_junk_file()
   endif
 endfunction
 nnoremap ,jf :JunkFile
-" }}}
-
-" Blog {{{1
-command! -nargs=0 WriteBlog call s:open_write_blog()
-function! s:open_write_blog()
-    let language = v:lc_time
-    execute ":silent! language time " . "C"
-    let l:blog_dir = $HOME . '/Documents/blog'. strftime('/%Y/%m/%d-%a')
-    execute ":silent! language time " . language
-    if !isdirectory(l:blog_dir)
-        call mkdir(l:blog_dir, 'p')
-    endif
-
-    let l:filename = input('Blog title: ', l:blog_dir.strftime('/'))
-    if l:filename != ''
-        execute 'edit ' . l:filename
-    endif
-endfunction
-
 " }}}
 
 
