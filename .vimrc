@@ -196,6 +196,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('vim-scripts/mru.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tyru/open-browser.vim')
+  call dein#add('tpope/vim-rails')
   call dein#end()
   call dein#save_state()
 endif
