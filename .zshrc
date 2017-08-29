@@ -53,3 +53,5 @@ case "${OSTYPE}" in
     alias ls="ls --color"
     ;;
 esac
+
+eval "$(rbenv init -)"
