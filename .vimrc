@@ -196,8 +196,6 @@ if dein#load_state('~/.vim/dein')
   call dein#add('vim-scripts/mru.vim')
   call dein#add('thinca/vim-quickrun')
   call dein#add('tyru/open-browser.vim')
-  call dein#add('tpope/vim-rails')
-  call dein#add('slim-template/vim-slim')
   call dein#end()
   call dein#save_state()
 endif
@@ -232,4 +230,26 @@ let g:quickrun_config['markdown'] = {
 let MRU_File = $HOME . '/.vim/.vim_mru_files'
 
 " }}}
+
+" junk file {{{
+command! -nargs=0 JunkFile call s:open_junk_file()
+function! s:open_junk_file()
+
+  " 曜日を英語で用いるため
+  let language = v:lc_time
+  execute ":silent! language time " . "C"
+  let l:junk_dir = $HOME . '/.vim/.vim_junk'. strftime('/%Y/%m/%d-%a')
+  execute ":silent! language time " . language
+  if !isdirectory(l:junk_dir)
+    call mkdir(l:junk_dir, 'p')
+  endif
+
+  let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
+  if l:filename != ''
+    execute 'edit ' .  l:filename
+  endif
+endfunction
+nnoremap ,jf :JunkFile
+" }}}
+
 
