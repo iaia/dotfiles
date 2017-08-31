@@ -104,6 +104,9 @@ set foldmethod=marker
 " clipboardを使う
 set clipboard=unnamed,autoselect
 
+" mouseをoffに
+set mouse=
+
 " 最後の編集位置にカーソルを自動移動
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
@@ -199,6 +202,8 @@ if dein#load_state('~/.vim/dein')
   call dein#add('tpope/vim-fugitive')
   call dein#add('tpope/vim-rails')
   call dein#add('tpope/vim-haml')
+  call dein#add('twitvim/twitvim')
+  call dein#add('kchmck/vim-coffee-script')
   call dein#end()
   call dein#save_state()
 endif
@@ -255,4 +260,5 @@ endfunction
 nnoremap ,jf :JunkFile
 " }}}
 
+nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 

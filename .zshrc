@@ -40,7 +40,7 @@ setopt nolistbeep
 setopt no_beep
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-alias vim='/usr/bin/vim'
+alias vim='/usr/local/bin/vim'
 alias vi='vim'
 alias vin='vim'
 export EDITOR=vim
@@ -55,3 +55,8 @@ case "${OSTYPE}" in
 esac
 
 eval "$(rbenv init -)"
+
+alias gs='git status'
+alias bx='bundle exec'
+
+alias ctags="`brew --prefix`/bin/ctags"
