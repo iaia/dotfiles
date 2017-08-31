@@ -104,6 +104,9 @@ set foldmethod=marker
 " clipboardを使う
 set clipboard=unnamed,autoselect
 
+" mouseをoffに
+set mouse=
+
 " 最後の編集位置にカーソルを自動移動
 :au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 
@@ -198,6 +201,11 @@ if dein#load_state('~/.vim/dein')
   call dein#add('tyru/open-browser.vim')
   call dein#add('tpope/vim-rails')
   call dein#add('slim-template/vim-slim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-haml')
+  call dein#add('twitvim/twitvim')
+  call dein#add('kchmck/vim-coffee-script')
   call dein#end()
   call dein#save_state()
 endif
@@ -233,3 +241,25 @@ let MRU_File = $HOME . '/.vim/.vim_mru_files'
 
 " }}}
 
+" junk file {{{
+command! -nargs=0 JunkFile call s:open_junk_file()
+function! s:open_junk_file()
+
+  " 曜日を英語で用いるため
+  let language = v:lc_time
+  execute ":silent! language time " . "C"
+  let l:junk_dir = $HOME . '/.vim/.vim_junk'. strftime('/%Y/%m/%d-%a')
+  execute ":silent! language time " . language
+  if !isdirectory(l:junk_dir)
+    call mkdir(l:junk_dir, 'p')
+  endif
+
+  let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
+  if l:filename != ''
+    execute 'edit ' .  l:filename
+  endif
+endfunction
+nnoremap ,jf :JunkFile
+" }}}
+
+nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
