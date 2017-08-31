@@ -60,6 +60,6 @@ alias gs='git status'
 alias bx='bundle exec'
 
 alias ctags="`brew --prefix`/bin/ctags"
-export PATH=$PATH:/Users/iaia/Library/Android/sdk/platform-tools/
+#export PATH=$PATH:/Users/iaia/Library/Android/sdk/platform-tools/
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
