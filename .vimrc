@@ -184,6 +184,8 @@ cmap <C-f> <Right>
 cmap <C-p> <Up>
 cmap <C-n> <Down>
 
+" tag-jump でtabnew
+nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 " }}}
 
 " plugin(dein), ftplugin {{{1
@@ -262,4 +264,3 @@ endfunction
 nnoremap ,jf :JunkFile
 " }}}
 
-nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
