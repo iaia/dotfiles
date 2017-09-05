@@ -5,7 +5,8 @@ export LANG=ja_JP.UTF-8
 
 local GREEN=$'%{\e[1;32m%}'
 local PINK=$'%{\e[1;35m%}'
-local DEFAULT=$'%{\e[1;m%}'
+local WHITE=$'%{\e[1;37m%}'
+local DEFAULT=$WHITE #$'%{\e[1;m%}'
 
 PROMPT="$GREEN%n@%m$DEFAULT %% "
 RPROMPT="[$PINK%~$DEFAULT]"
@@ -63,3 +64,8 @@ alias ctags="`brew --prefix`/bin/ctags"
 #export PATH=$PATH:/Users/iaia/Library/Android/sdk/platform-tools/
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
+
+echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
+function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}

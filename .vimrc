@@ -208,6 +208,8 @@ if dein#load_state('~/.vim/dein')
   call dein#add('tpope/vim-haml')
   call dein#add('twitvim/twitvim')
   call dein#add('kchmck/vim-coffee-script')
+  call dein#add('vim-syntastic/syntastic')
+  call dein#add('bronson/vim-trailing-whitespace')
   call dein#end()
   call dein#save_state()
 endif
@@ -240,6 +242,9 @@ let g:quickrun_config['markdown'] = {
 
 " mru
 let MRU_File = $HOME . '/.vim/.vim_mru_files'
+
+" vim-trailing-whitespace
+let g:extra_whitespace_ignored_filetypes = ['unite']
 
 " }}}
 
