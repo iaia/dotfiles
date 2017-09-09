@@ -1,30 +1,18 @@
 autoload -U compinit
 compinit
 
+autoload -Uz colors
+colors
+
 export LANG=ja_JP.UTF-8
 
-local GREEN=$'%{\e[1;32m%}'
-local PINK=$'%{\e[1;35m%}'
-#local WHITE=$'%{\e[1;37m%}'
-local WHITE=$'%F{white}'
-local DEFAULT=$WHITE #$'%{\e[1;m%}'
-
-PROMPT="$GREEN%n@%m$DEFAULT %% "
-RPROMPT="[$PINK%~$DEFAULT]"
-setopt PROMPT_SUBST
-
 bindkey -e
-
-export LSCOLORS=gxfxcxdxbxegedabagacad
-export LS_COLORS='di=36:ln=35:so=32:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
-zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 HISTFILE=~/.zsh_history
 HISTSIZE=2000000
 SAVEHIST=2000000
 setopt hist_ignore_all_dups
 setopt share_history
-
 autoload history-search-end
 zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
@@ -42,10 +30,22 @@ setopt nolistbeep
 setopt no_beep
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
-alias vim='/usr/local/bin/vim'
-alias vi='vim'
-alias vin='vim'
+
 export EDITOR=vim
+
+eval "$(rbenv init -)"
+
+export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+# colors
+PROMPT="%{$fg[green]%}%n@%m%{$reset_color%} %% "
+RPROMPT="[%{$fg[yellow]%}%~%{$reset_color%}]"
+setopt PROMPT_SUBST
+
+export LSCOLORS=gxfxcxdxbxegedabagacad
+export LS_COLORS='di=36:ln=35:so=32:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+zstyle ':completion:*' list-colors 'di=36' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
 case "${OSTYPE}" in
   freebsd*|darwin*)
@@ -56,20 +56,19 @@ case "${OSTYPE}" in
     ;;
 esac
 
-eval "$(rbenv init -)"
-
-alias gs='git status'
-alias bx='bundle exec'
-
-alias ctags="`brew --prefix`/bin/ctags"
-#export PATH=$PATH:/Users/iaia/Library/Android/sdk/platform-tools/
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
-
-alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
-
+# term
 echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
 
-# alternate screen 時にclearされてしまうのを防ぐ
-#export LESS="-X"
+
+# alias
+alias vim='/usr/local/bin/vim'
+alias vi='vim'
+alias vin='vim'
+
+alias gs='git status'
+
+alias bx='bundle exec'
+
+alias ctags="`brew --prefix`/bin/ctags"
+alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'

@@ -172,7 +172,7 @@ nnoremap <Space><S-o> :<C-u>call append(expand('.'), '')<Cr>j
 nnoremap <Space>o :<C-u>call append(expand('.'), '')<Cr>j
 " 後ろに空白を挿入
 nnoremap <Space>i i<Space><esc>
-" space  
+" space
 nnoremap <Space><Space> <PageDown>
 
 " コマンドライン上でのマッピング. 当たり前のもののみ
@@ -186,6 +186,10 @@ cmap <C-n> <Down>
 
 " tag-jump でtabnew
 nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
+
+" tabnew
+nnoremap <C-\> :tabnew %:h<CR>
+
 " }}}
 
 " plugin(dein), ftplugin {{{1
