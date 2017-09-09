@@ -3,14 +3,11 @@ compinit
 
 export LANG=ja_JP.UTF-8
 
-local GREEN=$'%{\e[1;32m%}'
-local PINK=$'%{\e[1;35m%}'
-#local WHITE=$'%{\e[1;37m%}'
-local WHITE=$'%F{white}'
-local DEFAULT=$WHITE #$'%{\e[1;m%}'
+autoload -Uz colors
+colors
 
-PROMPT="$GREEN%n@%m$DEFAULT %% "
-RPROMPT="[$PINK%~$DEFAULT]"
+PROMPT="%{$fg[green]%}%n@%m%{$reset_color%} %% "
+RPROMPT="[%{$fg[ping]%}%~%{$reset_color%}]"
 setopt PROMPT_SUBST
 
 bindkey -e
@@ -62,7 +59,6 @@ alias gs='git status'
 alias bx='bundle exec'
 
 alias ctags="`brew --prefix`/bin/ctags"
-#export PATH=$PATH:/Users/iaia/Library/Android/sdk/platform-tools/
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
@@ -70,6 +66,3 @@ alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude="
 
 echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
-
-# alternate screen 時にclearされてしまうのを防ぐ
-export LESS="-X"
