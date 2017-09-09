@@ -5,7 +5,8 @@ export LANG=ja_JP.UTF-8
 
 local GREEN=$'%{\e[1;32m%}'
 local PINK=$'%{\e[1;35m%}'
-local WHITE=$'%{\e[1;37m%}'
+#local WHITE=$'%{\e[1;37m%}'
+local WHITE=$'%F{white}'
 local DEFAULT=$WHITE #$'%{\e[1;m%}'
 
 PROMPT="$GREEN%n@%m$DEFAULT %% "
@@ -69,3 +70,6 @@ alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude="
 
 echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"
 function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'| rev)\007"}
+
+# alternate screen 時にclearされてしまうのを防ぐ
+#export LESS="-X"

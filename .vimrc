@@ -246,6 +246,14 @@ let MRU_File = $HOME . '/.vim/.vim_mru_files'
 " vim-trailing-whitespace
 let g:extra_whitespace_ignored_filetypes = ['unite']
 
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
+
+" twitter
+let twitvim_count = 40
+nnoremap ,tp :PosttoTwitter<CR>
+
 " }}}
 
 " junk file {{{
