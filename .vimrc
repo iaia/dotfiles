@@ -76,6 +76,77 @@ set shiftwidth=2
 set expandtab
 set autoindent
 
+" }}}
+
+" plugin(dein), ftplugin {{{1
+
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state('~/.vim/dein')
+  call dein#begin('~/.vim/dein')
+  call dein#add('Shougo/dein.vim')
+  call dein#add('vim-scripts/mru.vim')
+  call dein#add('thinca/vim-quickrun')
+  call dein#add('tyru/open-browser.vim')
+  call dein#add('tpope/vim-rails')
+  call dein#add('slim-template/vim-slim')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-haml')
+  call dein#add('twitvim/twitvim')
+  call dein#add('kchmck/vim-coffee-script')
+  call dein#add('vim-syntastic/syntastic')
+  call dein#add('bronson/vim-trailing-whitespace')
+  call dein#end()
+  call dein#save_state()
+endif
+
+filetype plugin indent on
+
+colorscheme desert
+syntax on
+set t_Co=256
+
+
+" open-browser
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+" quickrun
+let g:quickrun_config = {
+      \ "hook/output_encode/enable": 1,
+      \ "hook/output_encode/encoding": "utf-8",
+      \}
+let g:quickrun_config['ruby'] = {
+      \ "hook/output_encode/enable": 1,
+      \ "hook/output_encode/encoding": "utf-8",
+      \}
+let g:quickrun_config['markdown'] = {
+      \ 'type': 'markdown/pandoc',
+      \ 'outputter': 'browser',
+      \}
+
+" mru
+let MRU_File = $HOME . '/.vim/.vim_mru_files'
+
+" vim-trailing-whitespace
+let g:extra_whitespace_ignored_filetypes = ['unite']
+
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers=['rubocop', 'mri']
+
+" twitter
+let twitvim_count = 40
+nnoremap ,tp :PosttoTwitter<CR>
+
+" }}}
+
+" Options2 {{{
 " 全角スペース・行末のスペース・タブの可視化
 if has("syntax")
   syntax on
@@ -122,6 +193,12 @@ function! s:undo_refresh()
 endfunction
 
 set matchpairs+=<:>
+
+" 120桁目に印
+"set colorcolumn=120
+let &colorcolumn=join(range(120, 9999), ',')
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
 
 " }}}
 
@@ -191,94 +268,3 @@ nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <C-\> :tabnew %:h<CR>
 
 " }}}
-
-" plugin(dein), ftplugin {{{1
-
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-if dein#load_state('~/.vim/dein')
-  call dein#begin('~/.vim/dein')
-  call dein#add('Shougo/dein.vim')
-  call dein#add('vim-scripts/mru.vim')
-  call dein#add('thinca/vim-quickrun')
-  call dein#add('tyru/open-browser.vim')
-  call dein#add('tpope/vim-rails')
-  call dein#add('slim-template/vim-slim')
-  call dein#add('tpope/vim-fugitive')
-  call dein#add('tpope/vim-rails')
-  call dein#add('tpope/vim-haml')
-  call dein#add('twitvim/twitvim')
-  call dein#add('kchmck/vim-coffee-script')
-  call dein#add('vim-syntastic/syntastic')
-  call dein#add('bronson/vim-trailing-whitespace')
-  call dein#add('scrooloose/nerdtree')
-  call dein#end()
-  call dein#save_state()
-endif
-
-filetype plugin indent on
-
-colorscheme desert
-syntax on
-set t_Co=256
-
-
-" open-browser
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
-
-" quickrun
-let g:quickrun_config = {
-      \ "hook/output_encode/enable": 1,
-      \ "hook/output_encode/encoding": "utf-8",
-      \}
-let g:quickrun_config['ruby'] = {
-      \ "hook/output_encode/enable": 1,
-      \ "hook/output_encode/encoding": "utf-8",
-      \}
-let g:quickrun_config['markdown'] = {
-      \ 'type': 'markdown/pandoc',
-      \ 'outputter': 'browser',
-      \}
-
-" mru
-let MRU_File = $HOME . '/.vim/.vim_mru_files'
-
-" vim-trailing-whitespace
-let g:extra_whitespace_ignored_filetypes = ['unite']
-
-" syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
-
-" twitter
-let twitvim_count = 40
-nnoremap ,tp :PosttoTwitter<CR>
-
-" }}}
-
-" junk file {{{
-command! -nargs=0 JunkFile call s:open_junk_file()
-function! s:open_junk_file()
-
-  " 曜日を英語で用いるため
-  let language = v:lc_time
-  execute ":silent! language time " . "C"
-  let l:junk_dir = $HOME . '/.vim/.vim_junk'. strftime('/%Y/%m/%d-%a')
-  execute ":silent! language time " . language
-  if !isdirectory(l:junk_dir)
-    call mkdir(l:junk_dir, 'p')
-  endif
-
-  let l:filename = input('Junk Code: ', l:junk_dir.strftime('/%Y-%m-%d-%H%M%S.'))
-  if l:filename != ''
-    execute 'edit ' .  l:filename
-  endif
-endfunction
-nnoremap ,jf :JunkFile
-" }}}
-
