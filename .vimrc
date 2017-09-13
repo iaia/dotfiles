@@ -100,6 +100,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('kchmck/vim-coffee-script')
   call dein#add('vim-syntastic/syntastic')
   call dein#add('bronson/vim-trailing-whitespace')
+  call dein#add('scrooloose/nerdtree')
   call dein#end()
   call dein#save_state()
 endif
