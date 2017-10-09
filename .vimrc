@@ -49,6 +49,28 @@ set ruler
 
 " ステータスラインを常に表示する
 set laststatus=2
+" statusline {{{
+" ファイル名表示
+set statusline=%F\ 
+" 変更チェック表示
+set statusline+=%m
+" 読み込み専用かどうか表示
+set statusline+=%r
+" ヘルプページなら[HELP]と表示
+set statusline+=%h
+" プレビューウインドウなら[Prevew]と表示
+set statusline+=%w
+
+" 以降右寄せ
+set statusline+=%=
+" branchを表示
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
+" file encoding
+set statusline+=[enc=%{&fileencoding}]
+" 現在行数/全行数
+set statusline+=[l=%l/%L-%c]
+
+" }}}
 
 " バッファが変更されているとき、コマンドをエラーにするのでなく、保存する
 " かどうか確認を求める
@@ -75,6 +97,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
+
+" 折り返し
+set wrap
 
 " 常にタブ一覧表示
 set showtabline=2
@@ -129,7 +154,9 @@ if dein#load_state('~/.vim/dein')
   call dein#add('tyru/open-browser.vim')
   call dein#add('tpope/vim-rails')
   call dein#add('slim-template/vim-slim')
-  call dein#add('tpope/vim-fugitive')
+	call dein#add('tpope/vim-fugitive', {
+	    \ 'on_cmd' : 'Gstatus'
+	    \ })
   call dein#add('tpope/vim-rails')
   call dein#add('tpope/vim-haml')
   call dein#add('twitvim/twitvim')
@@ -137,6 +164,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('vim-syntastic/syntastic')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('airblade/vim-gitgutter')
   call dein#end()
   call dein#save_state()
 endif
@@ -146,7 +174,6 @@ filetype plugin indent on
 colorscheme desert
 syntax on
 set t_Co=256
-
 
 " open-browser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
@@ -181,6 +208,10 @@ let g:syntastic_ruby_checkers=['rubocop', 'mri']
 let twitvim_count = 40
 nnoremap ,tp :PosttoTwitter<CR>
 
+" vim-fugitive
+nnoremap gs :Gstatus<CR>
+nnoremap ,gd :Gdiff<CR><C-W>H
+
 " }}}
 
 " Options2 {{{
@@ -211,6 +242,9 @@ endif
 let &colorcolumn=join(range(120, 9999), ',')
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+" insert時にカーソルをvertical barに
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " }}}
 
@@ -279,6 +313,7 @@ nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 " tabnew
 nnoremap <C-\> :tabnew %:h<CR>
 
+
 " }}}
 
 " Blog {{{1
@@ -294,7 +329,7 @@ function! s:open_write_blog()
     endif
 
     let l:filename = input('Blog title: ', l:blog_dir.strftime('/'))
-    if l:filename != '
+    if l:filename != ''
         execute 'edit ' . l:filename
     endif
 endfunction

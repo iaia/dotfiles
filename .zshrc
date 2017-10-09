@@ -72,3 +72,9 @@ alias bx='bundle exec'
 
 alias ctags="`brew --prefix`/bin/ctags"
 alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/iaia/Library/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/iaia/Library/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/iaia/Library/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/iaia/Library/google-cloud-sdk/completion.zsh.inc'; fi
