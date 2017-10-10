@@ -9,3 +9,5 @@
 [push]
   default = simple
 
+[core]
+	excludesfile = /Users/hiroshiishihara/.gitignore_global

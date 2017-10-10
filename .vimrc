@@ -200,6 +200,7 @@ set matchpairs+=<:>
 let &colorcolumn=join(range(120, 9999), ',')
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+set showtabline=2
 
 " }}}
 
