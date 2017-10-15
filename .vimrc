@@ -98,6 +98,42 @@ set shiftwidth=2
 set expandtab
 set autoindent
 
+" 常にタブ一覧表示
+set showtabline=2
+
+" :difforigで変更を表示
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+        \ | wincmd p | diffthis
+endif
+set splitright
+
+" foldingに関する設定
+set foldmethod=marker
+
+" clipboardを使う
+set clipboard=unnamed,autoselect
+
+" mouseをoffに
+set mouse=
+
+" 最後の編集位置にカーソルを自動移動
+:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+
+" undoの履歴を保存
+if has('persistent_undo')
+  set undodir=~/.vim/.vimundo
+  set undofile
+endif
+
+command! -nargs=0 UndoRefresh call s:undo_refresh()
+function! s:undo_refresh()
+  execute ":!rm -rf ~/.vim/.vimundo/*"
+endfunction
+
+set matchpairs+=<:>
+
+
 " }}}
 
 " plugin(dein), ftplugin {{{1
@@ -199,31 +235,6 @@ if has("syntax")
   augroup END
 endif
 
-" foldingに関する設定
-set foldmethod=marker
-
-" clipboardを使う
-set clipboard=unnamed,autoselect
-
-" mouseをoffに
-set mouse=
-
-" 最後の編集位置にカーソルを自動移動
-:au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" undoの履歴を保存
-if has('persistent_undo')
-  set undodir=~/.vim/.vimundo
-  set undofile
-endif
-
-command! -nargs=0 UndoRefresh call s:undo_refresh()
-function! s:undo_refresh()
-  execute ":!rm -rf ~/.vim/.vimundo/*"
-endfunction
-
-set matchpairs+=<:>
-
 " 120桁目に印
 "set colorcolumn=120
 let &colorcolumn=join(range(120, 9999), ',')
@@ -287,7 +298,7 @@ nnoremap <Space>i i<Space><esc>
 " space
 nnoremap <Space><Space> <PageDown>
 
-" コマンドライン上でのマッピング. 当たり前のもののみ
+" コマンドライン上でのマッピング
 cmap <C-h> <Backspace>
 cmap <C-a> <Home>
 cmap <C-e> <End>
@@ -303,3 +314,4 @@ nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap <C-\> :tabnew %:h<CR>
 
 " }}}
+
