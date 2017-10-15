@@ -8,7 +8,7 @@ set background=dark
 set wildmode=longest,list,full
 
 " Vi互換モードをオフ（Vimの拡張機能を有効）
-set nocompatible 
+set nocompatible
 " ファイル名と内容によってファイルタイプを判別し、ファイルタイププラグインを有効にする
 filetype plugin indent on
 
@@ -49,6 +49,28 @@ set ruler
 
 " ステータスラインを常に表示する
 set laststatus=2
+" statusline {{{
+" ファイル名表示
+set statusline=%f\ 
+" 変更チェック表示
+set statusline+=%m
+" 読み込み専用かどうか表示
+set statusline+=%r
+" ヘルプページなら[HELP]と表示
+set statusline+=%h
+" プレビューウインドウなら[Prevew]と表示
+set statusline+=%w
+
+" 以降右寄せ
+set statusline+=%=
+" branchを表示
+set statusline+=%{exists('g:loaded_fugitive')?fugitive#statusline():''}\ 
+" file encoding
+set statusline+=[enc=%{&fileencoding}]
+" 現在行数/全行数
+set statusline+=[l=%l/%L-%c]
+
+" }}}
 
 " バッファが変更されているとき、コマンドをエラーにするのでなく、保存する
 " かどうか確認を求める
@@ -93,7 +115,9 @@ if dein#load_state('~/.vim/dein')
   call dein#add('tyru/open-browser.vim')
   call dein#add('tpope/vim-rails')
   call dein#add('slim-template/vim-slim')
-  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-fugitive', {
+	    \ 'on_cmd' : 'Gstatus'
+	    \ })
   call dein#add('tpope/vim-rails')
   call dein#add('tpope/vim-haml')
   call dein#add('twitvim/twitvim')
@@ -101,6 +125,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('vim-syntastic/syntastic')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('scrooloose/nerdtree')
+  call dein#add('airblade/vim-gitgutter')
   call dein#end()
   call dein#save_state()
 endif
@@ -144,6 +169,10 @@ let g:syntastic_ruby_checkers=['rubocop', 'mri']
 " twitter
 let twitvim_count = 40
 nnoremap ,tp :PosttoTwitter<CR>
+
+" vim-fugitive
+nnoremap gs :Gstatus<CR>
+nnoremap ,gd :Gdiff<CR><C-W>H
 
 " }}}
 
@@ -201,6 +230,10 @@ let &colorcolumn=join(range(120, 9999), ',')
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 set showtabline=2
+
+" insert時にカーソルをvertical barに
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
 " }}}
 
