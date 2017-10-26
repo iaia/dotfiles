@@ -51,7 +51,7 @@ set ruler
 set laststatus=2
 " statusline {{{
 " ファイル名表示
-set statusline=%F\ 
+set statusline=%f\ 
 " 変更チェック表示
 set statusline+=%m
 " 読み込み専用かどうか表示
@@ -165,6 +165,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('scrooloose/nerdtree')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('jreybert/vimagit')
   call dein#end()
   call dein#save_state()
 endif

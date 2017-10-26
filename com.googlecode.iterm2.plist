@@ -42047,9 +42047,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>515 562 770 381 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>138 52 1523 927 0 0 1680 1027 </string>
+	<string>52 100 1544 927 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>0 26 1559 927 0 0 1680 1027 </string>
+	<string>16 0 1544 927 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>0 78 1680 927 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -44851,7 +44851,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2017-10-08T12:34:08Z</date>
+	<date>2017-10-21T12:42:26Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -44880,6 +44880,8 @@
 	<false/>
 	<key>findIgnoreCase_iTerm</key>
 	<true/>
+	<key>findMode_iTerm</key>
+	<integer>0</integer>
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
