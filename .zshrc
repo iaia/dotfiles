@@ -73,6 +73,8 @@ alias bx='bundle exec'
 alias ctags="`brew --prefix`/bin/ctags"
 alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 
+alias magit="vim -c MagitOnly"
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/iaia/Library/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/iaia/Library/google-cloud-sdk/path.zsh.inc'; fi
 
