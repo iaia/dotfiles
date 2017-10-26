@@ -214,6 +214,7 @@ nnoremap gs :Gstatus<CR>
 nnoremap ,gd :Gdiff<CR><C-W>H
 
 " vimagit
+nnoremap <C-m> :MagitOnly<CR>
 
 " }}}
 
