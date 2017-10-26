@@ -213,6 +213,8 @@ nnoremap ,tp :PosttoTwitter<CR>
 nnoremap gs :Gstatus<CR>
 nnoremap ,gd :Gdiff<CR><C-W>H
 
+" vimagit
+
 " }}}
 
 " Options2 {{{
