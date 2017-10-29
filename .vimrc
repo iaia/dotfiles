@@ -162,6 +162,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('bronson/vim-trailing-whitespace')
   call dein#add('scrooloose/nerdtree')
   call dein#add('airblade/vim-gitgutter')
+  call dein#add('jreybert/vimagit')
   call dein#end()
   call dein#save_state()
 endif
@@ -204,11 +205,13 @@ let g:syntastic_ruby_checkers=['rubocop', 'mri']
 
 " twitter
 let twitvim_count = 40
-nnoremap ,tp :PosttoTwitter<CR>
 
-" vim-fugitive
-nnoremap gs :Gstatus<CR>
-nnoremap ,gd :Gdiff<CR><C-W>H
+" open-browser
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+
+" vimagit
+let g:magit_default_fold_level = 2
+let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'commit', 'staged']
 
 " }}}
 
@@ -264,6 +267,10 @@ nnoremap j gj
 nnoremap gj j
 nnoremap k gk
 nnoremap gk k
+
+" tabの移動
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 
 " spaceでpagedown, shift+spaceでpageup
 nnoremap <SPACE>j   <PageDown>
@@ -332,5 +339,44 @@ cmap <C-p> <Up>
 cmap <C-n> <Down>
 " }}}
 
+" plugin-mapping {{{
+
+" twitter
+nnoremap ,tp :PosttoTwitter<CR>
+
+" vim-fugitive
+nnoremap gs :Gstatus<CR>
+nnoremap ,gd :Gdiff<CR><C-W>H
+
+" open-browser
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
+" vimagit
+nnoremap <C-m> :Magit<CR>
+
 " }}}
 
+" }}}
+
+" daily_reports {{{1
+command! -nargs=0 DailyReports call s:open_write_daily_reports()
+function! s:open_write_daily_reports()
+
+    let language = v:lc_time
+    execute ":silent! language time " . "C"
+    let l:daily_reports_dir = $HOME . '/Documents/daily_reports'. strftime('/%Y/%m/%d-%a')
+    execute ":silent! language time " . language
+    if !isdirectory(l:daily_reports_dir)
+        call mkdir(l:daily_reports_dir, 'p')
+    endif
+
+    let l:filename = strftime('%Y-%m-%d-%a') . '-reports.mkd'
+    let l:filepath = input('title: ', l:daily_reports_dir.strftime('/') . l:filename)
+    if l:filepath != ''
+      autocmd BufNewFile,BufRead *-reports.mkd if getfsize(@%) <= 0 | 0read $HOME/.vim/templates/template_daily_reports.mkd | endif
+      execute 'edit ' . l:filepath
+    endif
+endfunction
+
+" }}}
