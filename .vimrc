@@ -214,10 +214,10 @@ nnoremap gs :Gstatus<CR>
 nnoremap ,gd :Gdiff<CR><C-W>H
 
 " vimagit
-nnoremap <C-m> :MagitOnly<CR>
+nnoremap <C-m> :Magit<CR>
 let g:magit_default_show_all_files = 1
 let g:magit_default_fold_level = 2
-let g:magit_default_sections = ['global_help', 'info', 'commit', 'staged', 'unstaged'] "aaa
+let g:magit_default_sections = ['global_help', 'info', 'commit', 'unstaged', 'staged']
 
 " }}}
 
