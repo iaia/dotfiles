@@ -318,6 +318,7 @@ cmap <C-n> <Down>
 nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 
 " tabnew
+nnoremap tn :tabnew
 nnoremap <C-\> :tabnew %:h<CR>
 
 
