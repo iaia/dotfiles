@@ -269,8 +269,10 @@ nnoremap k gk
 nnoremap gk k
 
 " tabの移動
-nnoremap <C-l> gt
-nnoremap <C-h> gT
+nnoremap <C-l> :tabn<CR>
+nnoremap <C-w><C-l> :tabn<CR>
+nnoremap <C-h> :tabp<CR>
+nnoremap <C-w><C-h> :tabp<CR>
 
 " spaceでpagedown, shift+spaceでpageup
 nnoremap <SPACE>j   <PageDown>
@@ -337,6 +339,13 @@ cmap <C-b> <Left>
 cmap <C-f> <Right>
 cmap <C-p> <Up>
 cmap <C-n> <Down>
+" }}}
+
+" tnoremap {{{
+
+tnoremap <C-w><C-h> <C-w>:tabp<CR>
+tnoremap <C-w><C-l> <C-w>:tabn<CR>
+
 " }}}
 
 " plugin-mapping {{{
