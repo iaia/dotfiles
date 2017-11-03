@@ -296,6 +296,8 @@ nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 " tabnew
 nnoremap <C-\> :tabnew %:h<CR>
 
+" copy current file path to clipboard
+nnoremap cp :let @" = expand("%")<CR>
 " }}}
 
 " inoremap {{{
