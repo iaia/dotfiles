@@ -217,7 +217,7 @@ nnoremap ,gd :Gdiff<CR><C-W>H
 nnoremap <C-m> :Magit<CR>
 let g:magit_default_show_all_files = 1
 let g:magit_default_fold_level = 2
-let g:magit_default_sections = ['global_help', 'info', 'commit', 'unstaged', 'staged']
+let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'staged', 'commit']
 
 " }}}
 
@@ -321,6 +321,8 @@ nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>
 nnoremap tn :tabnew
 nnoremap <C-\> :tabnew %:h<CR>
 
+" space+wで保存
+nnoremap <Space>w :w<CR>
 
 " }}}
 
