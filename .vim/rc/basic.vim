@@ -73,7 +73,3 @@ set clipboard=unnamed,autoselect
 " mouseをoffに
 set mouse=
 
-colorscheme desert
-syntax on
-set t_Co=256
-

@@ -53,13 +53,6 @@ if has("syntax")
   augroup END
 endif
 
-" 120桁目に印
-"set colorcolumn=120
-let &colorcolumn=join(range(120, 9999), ',')
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
-
-set showtabline=2
-
 " insert時にカーソルをvertical barに
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=0\x7"

@@ -16,9 +16,6 @@ if dein#load_state(s:dein_dir)
   call dein#save_state()
 endif
 
-filetype plugin indent on
-syntax enable
-
 " open-browser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 
