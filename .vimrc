@@ -108,6 +108,9 @@ if !exists(":DiffOrig")
 endif
 set splitright
 
+" buffer
+set hidden
+
 " foldingに関する設定
 set foldmethod=marker
 
@@ -169,6 +172,7 @@ if dein#load_state('~/.vim/dein')
   call dein#add('Zabanaa/neuromancer.vim')
   call dein#add('nightsense/nemo')
   call dein#add('ayu-theme/ayu-vim')
+  call dein#add('tpope/vim-surround')
   call dein#end()
   call dein#save_state()
 endif
@@ -215,9 +219,14 @@ let twitvim_count = 40
 " open-browser
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 
+" nerdtree
+let g:NERDTreeShowBookmarks=1
+autocmd Filetype nerdtree nnoremap <buffer> bb :Bookmark<CR>
+autocmd Filetype nerdtree nnoremap <buffer> bc :ClearBookmarks<CR>
+
 " vimagit
 let g:magit_default_fold_level = 2
-let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'commit', 'staged']
+let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'staged', 'commit']
 
 " }}}
 
@@ -304,6 +313,8 @@ nnoremap <C-\> :tabnew %:h<CR>
 
 " copy current file path to clipboard
 nnoremap cp :let @" = expand("%")<CR>
+
+nnoremap cs :%s/\s*$//<CR>
 " }}}
 
 " inoremap {{{
