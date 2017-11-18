@@ -41998,8 +41998,6 @@
 	<real>148.7890625</real>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
-	<key>NSFontPanelAttributes</key>
-	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -42041,6 +42039,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
+<<<<<<< HEAD
 	<string>1169 110 445 453 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
@@ -42054,6 +42053,21 @@
 	<string>0 78 1680 927 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 55 1680 927 0 0 1680 1027 </string>
+=======
+	<string>1169 110 445 320 0 0 1680 1027 </string>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 476 620 392 0 0 1680 1027 </string>
+	<key>NSWindow Frame SessionsPreferences</key>
+	<string>269 139 606 456 0 0 1680 1027 </string>
+	<key>NSWindow Frame SharedPreferences</key>
+	<string>2068 -148 770 429 1680 -390 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 0</key>
+	<string>1700 -350 1291 951 1680 -390 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>3186 -364 991 861 1680 -390 2560 1417 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>136 48 1410 951 0 0 1680 1027 </string>
+>>>>>>> master
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -42657,7 +42671,7 @@
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>20000</integer>
 			<key>Scrollback With Status Bar</key>
 			<false/>
 			<key>Scrollback in Alternate Screen</key>
@@ -42720,7 +42734,7 @@
 			<key>Transparency</key>
 			<real>0.11736778846153847</real>
 			<key>Unlimited Scrollback</key>
-			<true/>
+			<false/>
 			<key>Use Bold Font</key>
 			<false/>
 			<key>Use Bright Bold</key>
@@ -44787,6 +44801,16 @@
 			<string>/Users/iaia</string>
 		</dict>
 	</array>
+	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforePastingOneLineEndingInNewlineAtShellPrompt_selection</key>
+	<integer>0</integer>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
@@ -44795,6 +44819,13 @@
 	<real>526647916.77060699</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
+<<<<<<< HEAD
+=======
+	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
+	<integer>0</integer>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
+>>>>>>> master
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>526310588.37957698</real>
 	<key>NoSyncTipsDisabled</key>
@@ -44851,7 +44882,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
+<<<<<<< HEAD
 	<date>2017-11-08T15:52:23Z</date>
+=======
+	<date>2017-11-02T00:33:47Z</date>
+>>>>>>> master
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -44885,7 +44920,11 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
+<<<<<<< HEAD
 	<string>3.1.5</string>
+=======
+	<string>3.1.4</string>
+>>>>>>> master
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>

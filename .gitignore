@@ -1,3 +1,6 @@
-.vim/*
+.vim/.vimundo
+.vim/dein
+.vim/.vim_mru_files
+.vim/.netrwhist
 installer.sh
 *.swp

@@ -73,11 +73,11 @@ alias bx='bundle exec'
 alias ctags="`brew --prefix`/bin/ctags"
 alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 
-alias magit="vim -c MagitOnly"
+if [ -f "${HOME}/Library/google-cloud-sdk/path.zsh.inc" ]; then source "${HOME}/Library/google-cloud-sdk/path.zsh.inc"; fi
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/iaia/Library/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/iaia/Library/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "${HOME}/Library/google-cloud-sdk/completion.zsh.inc" ]; then source "${HOME}/Library/google-cloud-sdk/completion.zsh.inc"; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/iaia/Library/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/iaia/Library/google-cloud-sdk/completion.zsh.inc'; fi
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+alias magit='vim -c MagitOnly'
+alias daily_reports='vim -c DailyReport'

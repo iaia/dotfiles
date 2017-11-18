@@ -1,0 +1,69 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo  = 'vim-scripts/mru.vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_cmd = ['GStatus']
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+
+[[plugins]]
+repo = 'tpope/vim-haml'
+
+[[plugins]]
+repo = 'twitvim/twitvim'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
+repo = 'vim-syntastic/syntastic'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'jreybert/vimagit'
+
+[[plugins]]
+repo = 'cnj4/horseradish256'
+
+[[plugins]]
+repo = 'acgissues/contrastneed-theme'
+
+[[plugins]]
+repo = 'gkjgh/cobalt'
+
+[[plugins]]
+repo = 'Zabanaa/neuromancer.vim'
+
+[[plugins]]
+repo = 'nightsense/nemo'
+
+[[plugins]]
+repo = 'ayu-theme/ayu-vim'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
