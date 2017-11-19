@@ -43,7 +43,7 @@ nnoremap <C-\> :tabnew %:h<CR>
 " copy current file path to clipboard
 nnoremap cp :let @" = expand("%")<CR>
 
-nnoremap cs :%s/\s*$//<CR>
+nnoremap ,cs :%s/\s*$//<CR>
 " }}}
 
 " inoremap {{{

@@ -42039,7 +42039,6 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-<<<<<<< HEAD
 	<string>1169 110 445 453 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
@@ -42053,21 +42052,6 @@
 	<string>0 78 1680 927 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
 	<string>0 55 1680 927 0 0 1680 1027 </string>
-=======
-	<string>1169 110 445 320 0 0 1680 1027 </string>
-	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>530 476 620 392 0 0 1680 1027 </string>
-	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1680 1027 </string>
-	<key>NSWindow Frame SharedPreferences</key>
-	<string>2068 -148 770 429 1680 -390 2560 1417 </string>
-	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1700 -350 1291 951 1680 -390 2560 1417 </string>
-	<key>NSWindow Frame iTerm Window 1</key>
-	<string>3186 -364 991 861 1680 -390 2560 1417 </string>
-	<key>NSWindow Frame iTerm Window 2</key>
-	<string>136 48 1410 951 0 0 1680 1027 </string>
->>>>>>> master
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
