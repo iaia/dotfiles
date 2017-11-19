@@ -1,5 +1,6 @@
 .vim/.vimundo
 .vim/dein
-installer.sh
 .vim/.vim_mru_files
 .vim/.netrwhist
+installer.sh
+*.swp
