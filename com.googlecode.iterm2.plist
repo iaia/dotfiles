@@ -44803,13 +44803,10 @@
 	<real>526647916.77060699</real>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
-<<<<<<< HEAD
-=======
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<false/>
->>>>>>> master
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>526310588.37957698</real>
 	<key>NoSyncTipsDisabled</key>
@@ -44866,11 +44863,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-<<<<<<< HEAD
-	<date>2017-11-08T15:52:23Z</date>
-=======
 	<date>2017-11-02T00:33:47Z</date>
->>>>>>> master
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -44904,11 +44897,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-<<<<<<< HEAD
 	<string>3.1.5</string>
-=======
-	<string>3.1.4</string>
->>>>>>> master
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
