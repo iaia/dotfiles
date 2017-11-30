@@ -95,3 +95,7 @@ tnoremap <C-w><C-h> <C-w>:tabp<CR>
 tnoremap <C-w><C-l> <C-w>:tabn<CR>
 
 " }}}
+
+" ruby
+" to 1.9 hash
+vnoremap <silent> <C-h> :s/:\([a-zA-Z0-9_]\+\)\s*=>/\1:/g<CR>

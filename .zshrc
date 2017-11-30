@@ -81,3 +81,4 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias magit='vim -c MagitOnly'
 alias daily_reports='vim -c DailyReport'
+alias gc='git checkout'
