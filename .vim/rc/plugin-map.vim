@@ -7,7 +7,7 @@ nnoremap gs :Gstatus<CR>
 nnoremap ,gd :Gdiff<CR><C-W>H
 
 " vimagit
-" nnoremap <C-m> :Magit<CR>
+nnoremap <Space><Space> :tabnew +MagitOnly<CR>
 
 " twitter
 nnoremap ,tp :PosttoTwitter<CR>

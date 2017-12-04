@@ -44863,11 +44863,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-<<<<<<< Updated upstream
-	<date>2017-11-02T00:33:47Z</date>
-=======
 	<date>2017-11-08T15:52:23Z</date>
->>>>>>> Stashed changes
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>ShowBookmarkName</key>

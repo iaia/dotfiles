@@ -31,8 +31,6 @@ nnoremap <Space>o :<C-u>call append(expand('.'), '')<Cr>j
 
 " 後ろに空白を挿入
 nnoremap <Space>i i<Space><esc>
-" space
-nnoremap <Space><Space> <PageDown>
 
 " tag-jump でtabnew
 nnoremap <C-]> :<C-u>tab stj <C-R>=expand('<cword>')<CR><CR>

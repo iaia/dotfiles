@@ -65,8 +65,11 @@ function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'
 alias vim='/usr/local/bin/vim'
 alias vi='vim'
 alias vin='vim'
+alias v='vim'
 
+alias g='git'
 alias gs='git status'
+alias gc='git checkout'
 
 alias bx='bundle exec'
 
@@ -81,4 +84,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias magit='vim -c MagitOnly'
 alias daily_reports='vim -c DailyReport'
-alias gc='git checkout'
