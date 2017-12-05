@@ -12,3 +12,5 @@ nnoremap <Space><Space> :tabnew +MagitOnly<CR>
 " twitter
 nnoremap ,tp :PosttoTwitter<CR>
 
+" nerdtree
+nnoremap <silent><C-e> :NERDTreeFocusToggle<CR>

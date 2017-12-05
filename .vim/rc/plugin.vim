@@ -57,4 +57,8 @@ let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'staged', 'co
 let g:NERDTreeShowBookmarks=1
 autocmd Filetype nerdtree nnoremap <buffer> bb :Bookmark<CR>
 autocmd Filetype nerdtree nnoremap <buffer> bc :ClearBookmarks<CR>
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
