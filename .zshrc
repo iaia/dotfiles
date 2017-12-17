@@ -39,7 +39,7 @@ export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 # colors
-PROMPT="%{$fg[green]%}%n@%m%{$reset_color%} %% "
+PROMPT="%{$fg[green]%}%n@%m%{$reset_color%} $ "
 RPROMPT="[%{$fg[yellow]%}%~%{$reset_color%}]"
 setopt PROMPT_SUBST
 
@@ -70,6 +70,7 @@ alias v='vim'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'
+alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
 alias bx='bundle exec'
 
