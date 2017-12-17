@@ -57,7 +57,17 @@ let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'staged', 'co
 let g:NERDTreeShowBookmarks=1
 autocmd Filetype nerdtree nnoremap <buffer> bb :Bookmark<CR>
 autocmd Filetype nerdtree nnoremap <buffer> bc :ClearBookmarks<CR>
+let g:NERDTreeWinSize = 40
+" let g:NERDTreeWinPos = "right"
+
+" nerdtree-tab
 let g:nerdtree_tabs_open_on_console_startup=1
+
+" quickfixがnerdtree下に表示されるのを修正する
+augroup DragQuickfixWindowDown
+    autocmd!
+    autocmd FileType qf wincmd J
+augroup end
 
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
