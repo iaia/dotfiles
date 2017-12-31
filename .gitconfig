@@ -10,4 +10,4 @@
   default = simple
 
 [core]
-	excludesfile = /Users/hiroshiishihara/.gitignore_global
+	excludesfile = /Users/iaia/.gitignore_global

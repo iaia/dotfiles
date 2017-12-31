@@ -4,3 +4,4 @@
 .vim/.netrwhist
 installer.sh
 *.swp
+.docker/machine/
