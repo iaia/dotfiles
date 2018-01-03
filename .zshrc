@@ -55,7 +55,7 @@ precmd () {
 }
 
 # プロンプト表示
-PROMPT="%{$fg[green]%}%n@%m%{$reset_color%} $ "
+PROMPT="%{$fg[green]%} ✗%{$reset_color%} "
 RPROMPT="%1(v|%F{green}%1v%f|) [%{$fg[yellow]%}%~%{$reset_color%}]"
 
 setopt prompt_subst
