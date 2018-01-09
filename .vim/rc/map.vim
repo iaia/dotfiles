@@ -42,6 +42,8 @@ nnoremap <C-\> :tabnew %:h<CR>
 nnoremap cp :let @" = expand("%")<CR>
 
 nnoremap ,cs :%s/\s*$//<CR>
+
+nnoremap <Space>q :q<CR>
 " }}}
 
 " inoremap {{{
