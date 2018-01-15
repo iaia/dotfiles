@@ -41,7 +41,7 @@ let g:extra_whitespace_ignored_filetypes = ['unite']
 
 " syntastic
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers=['rubocop', 'mri']
+let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 " twitter
 let twitvim_count = 40
