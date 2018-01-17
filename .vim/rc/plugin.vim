@@ -40,8 +40,12 @@ let MRU_File = $HOME . '/.vim/.vim_mru_files'
 let g:extra_whitespace_ignored_filetypes = ['unite']
 
 " syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+" let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+" let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+
+" ale
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
 
 " twitter
 let twitvim_count = 40

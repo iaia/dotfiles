@@ -33,9 +33,6 @@ repo = 'twitvim/twitvim'
 repo = 'kchmck/vim-coffee-script'
 
 [[plugins]]
-repo = 'vim-syntastic/syntastic'
-
-[[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
@@ -76,3 +73,6 @@ repo = 'jistr/vim-nerdtree-tabs'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'w0rp/ale'
