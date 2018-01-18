@@ -56,6 +56,7 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 " vimagit
 let g:magit_default_fold_level = 2
 let g:magit_default_sections = ['global_help', 'info', 'unstaged', 'staged', 'commit']
+let g:magit_discard_untracked_do_delete=1
 
 " nerdtree
 let g:NERDTreeShowBookmarks=1
