@@ -46,6 +46,7 @@ let g:extra_whitespace_ignored_filetypes = ['unite']
 " ale
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
+let g:ale_ruby_rubocop_executable = 'bundle'
 
 " twitter
 let twitvim_count = 40
