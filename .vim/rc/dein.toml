@@ -76,3 +76,6 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'w0rp/ale'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'

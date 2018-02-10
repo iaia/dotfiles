@@ -47,6 +47,12 @@ let g:extra_whitespace_ignored_filetypes = ['unite']
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_linters = {
+\   'scss': ['sasslint'],
+\}
+let g:ale_fixers = {
+\   'scss': ['sasslint'],
+\}
 
 " twitter
 let twitvim_count = 40
@@ -78,3 +84,17 @@ augroup end
 
 " 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" ctrlp
+" キャッシュディレクトリ
+let g:ctrlp_cache_dir = $HOME.'/.vim/.cache/ctrlp'
+" キャッシュを終了時に削除しない
+let g:ctrlp_clear_cache_on_exit = 0
+" 遅延再描画
+let g:ctrlp_lazy_update = 1
+" ルートパスと認識させるためのファイル
+let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
+let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_prompt_mappings = {
+  \ 'PrtClearCache()':      ['<c-r>'],
+  \ }

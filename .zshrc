@@ -92,6 +92,7 @@ alias gc='git checkout'
 alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
 alias bx='bundle exec'
+alias bi='bundle install'
 alias br='bin/rails'
 
 alias ctags="`brew --prefix`/bin/ctags"

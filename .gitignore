@@ -2,6 +2,7 @@
 .vim/dein
 .vim/.vim_mru_files
 .vim/.netrwhist
+.vim/.cache/ctrlp/
 installer.sh
 *.swp
 .docker/machine/
