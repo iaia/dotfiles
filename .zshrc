@@ -89,6 +89,8 @@ alias v='vim'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'
+alias gco='git o @b'
+alias -g @b='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
 alias bx='bundle exec'
@@ -107,3 +109,9 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 alias magit='vim -c MagitOnly'
 alias daily_reports='vim -c DailyReport'
 
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/hiroshiishihara/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/hiroshiishihara/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/hiroshiishihara/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/hiroshiishihara/google-cloud-sdk/completion.zsh.inc'; fi
