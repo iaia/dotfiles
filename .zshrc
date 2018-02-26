@@ -86,6 +86,7 @@ alias vi='vim'
 alias vin='vim'
 alias v='vim'
 
+alias git='/usr/local/bin/git'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'
@@ -108,7 +109,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 alias magit='vim -c MagitOnly'
 alias daily_reports='vim -c DailyReport'
-
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/hiroshiishihara/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/hiroshiishihara/google-cloud-sdk/path.zsh.inc'; fi

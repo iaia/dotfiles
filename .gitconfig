@@ -13,3 +13,6 @@
 	excludesfile = ~/.gitignore_global
 [alias]
 	o = checkout
+	lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
+[merge]
+	tool = vimdiff
