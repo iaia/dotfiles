@@ -15,4 +15,3 @@ nnoremap ,tp :PosttoTwitter<CR>
 " nerdtree
 nnoremap <silent><C-e> :NERDTreeFocusToggle<CR>
 nnoremap <Space>f :NERDTreeTabsFind<CR>
-

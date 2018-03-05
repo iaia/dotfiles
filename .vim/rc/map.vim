@@ -44,6 +44,9 @@ nnoremap cp :let @" = expand("%")<CR>
 nnoremap ,cs :%s/\s*$//<CR>
 
 nnoremap <Space>q :q<CR>
+
+nnoremap [q :cprevious<CR>
+nnoremap ]q :cnext<CR>
 " }}}
 
 " inoremap {{{

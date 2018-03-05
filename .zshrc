@@ -91,6 +91,7 @@ alias g='git'
 alias gs='git status'
 alias gc='git checkout'
 alias gco='git o @b'
+alias gpr='git pull --rebase upstream master'
 alias -g @b='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
