@@ -47,6 +47,8 @@ nnoremap <Space>q :q<CR>
 
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
+
+nnoremap E :e!<CR>
 " }}}
 
 " inoremap {{{
