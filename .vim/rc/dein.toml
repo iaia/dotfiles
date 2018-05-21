@@ -85,3 +85,6 @@ repo = 'leafgarland/typescript-vim'
 
 [[plugins]]
 repo = 'Quramy/tsuquyomi'
+
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
