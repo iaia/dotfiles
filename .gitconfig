@@ -15,4 +15,4 @@
 	o = checkout
 	lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
 [merge]
-	tool = vimdiff
+	tool = p4merge
