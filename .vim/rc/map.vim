@@ -45,10 +45,13 @@ nnoremap ,cs :%s/\s*$//<CR>
 
 nnoremap <Space>q :q<CR>
 
-nnoremap [q :cprevious<CR>
-nnoremap ]q :cnext<CR>
+nnoremap [[ :cprevious<CR>
+nnoremap ]] :cnext<CR>
 
 nnoremap E :e!<CR>
+
+nnoremap <LEADER>t :tabnew<CR>:tabmove 0<CR>:terminal ++curwin ++close<CR>
+nnoremap <LEADER>n :tabnew<CR>
 " }}}
 
 " inoremap {{{
