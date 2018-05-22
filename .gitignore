@@ -6,3 +6,4 @@
 installer.sh
 *.swp
 .docker/machine/
+.vim/templates/template_daily_reports.mkd
