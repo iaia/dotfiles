@@ -21,17 +21,19 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 
 " quickrun
 let g:quickrun_config = {
+      \"_": {
+        \ "hook/output_encode/enable": 1,
+        \ "hook/output_encode/encoding": "utf-8",
+      \},
+      \"ruby": {
       \ "hook/output_encode/enable": 1,
       \ "hook/output_encode/encoding": "utf-8",
-      \}
-let g:quickrun_config['ruby'] = {
-      \ "hook/output_encode/enable": 1,
-      \ "hook/output_encode/encoding": "utf-8",
-      \}
-let g:quickrun_config['markdown'] = {
+      \},
+      \'markdown': {
       \ 'type': 'markdown/pandoc',
       \ 'outputter': 'browser',
       \}
+  \}
 
 " mru
 let MRU_File = $HOME . '/.vim/.vim_mru_files'
