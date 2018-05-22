@@ -49,9 +49,13 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_ruby_rubocop_executable = 'bundle'
 let g:ale_linters = {
 \   'scss': ['sasslint'],
+\   'javascript': ['jshint'],
+\   'coffee': ['coffeelint'],
 \}
 let g:ale_fixers = {
 \   'scss': ['sasslint'],
+\   'javascript': ['jshint'],
+\   'coffee': ['coffeelint'],
 \}
 
 " twitter
