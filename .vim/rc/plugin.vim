@@ -92,8 +92,9 @@ let g:ctrlp_cache_dir = $HOME.'/.vim/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 0
 " 遅延再描画
 let g:ctrlp_lazy_update = 1
+let g:ctrlp_working_path_mode = 'ra'
 " ルートパスと認識させるためのファイル
-let g:ctrlp_root_markers = ['Gemfile', 'pom.xml', 'build.xml']
+let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_prompt_mappings = {
   \ 'PrtClearCache()':      ['<c-r>'],
