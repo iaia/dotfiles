@@ -45,9 +45,6 @@ nnoremap ,cs :%s/\s*$//<CR>
 
 nnoremap <Space>q :q<CR>
 
-nnoremap [[ :cprevious<CR>
-nnoremap ]] :cnext<CR>
-
 nnoremap E :e!<CR>
 
 nnoremap <LEADER>t :tabnew<CR>:tabmove 0<CR>:terminal ++curwin ++close<CR>

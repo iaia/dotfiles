@@ -6,6 +6,10 @@ vmap gx <Plug>(openbrowser-smart-search)
 nnoremap gs :Gstatus<CR>
 nnoremap ,gd :Gdiff<CR><C-W>H
 
+" Ggrep Quickfix
+nnoremap g[ :cprevious<CR>
+nnoremap g] :cnext<CR>
+
 " vimagit
 nnoremap <Space><Space> :tabnew +MagitOnly<CR>
 
