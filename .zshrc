@@ -96,10 +96,6 @@ alias gpr='git pull --rebase upstream master'
 alias -g @b='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
-alias bx='bundle exec'
-alias bi='bundle install'
-alias br='bin/rails'
-
 alias ctags="`brew --prefix`/bin/ctags"
 alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
 
@@ -109,7 +105,6 @@ if [ -f "${HOME}/Library/google-cloud-sdk/completion.zsh.inc" ]; then source "${
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-alias magit='vim -c MagitOnly'
 alias daily_reports='vim -c DailyReport'
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -124,3 +119,7 @@ export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
 alias kj='kotlinc-jvm'
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export TERMINAL_NOTIFIER_BIN="/usr/local/bin/terminal-notifier"
+alias magit='vim -c MagitOnly'
+alias bx='bundle exec'
+alias bi='bundle install'
+alias br='bin/rails'
