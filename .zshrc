@@ -118,3 +118,6 @@ if [ -f '/Users/hiroshiishihara/google-cloud-sdk/path.zsh.inc' ]; then source '/
 if [ -f '/Users/hiroshiishihara/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/hiroshiishihara/google-cloud-sdk/completion.zsh.inc'; fi
 
 export PATH="${HOME}/Library/flutter/bin:$PATH"
+
+export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
+alias kj='kotlinc-jvm'
