@@ -86,7 +86,7 @@ alias vi='vim'
 alias vin='vim'
 alias v='vim'
 
-alias git='/usr/local/bin/git'
+alias git='hub'
 alias g='git'
 alias gs='git status'
 alias gc='git checkout'
@@ -121,3 +121,5 @@ export PATH="${HOME}/Library/flutter/bin:$PATH"
 
 export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
 alias kj='kotlinc-jvm'
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+export TERMINAL_NOTIFIER_BIN="/usr/local/bin/terminal-notifier"
