@@ -18,13 +18,19 @@ GTAGS
 .idea/**/shelf
 
 # Sensitive or high-churn files
-.idea/**/dataSources/
-.idea/**/dataSources.ids
-.idea/**/dataSources.local.xml
-.idea/**/sqlDataSources.xml
-.idea/**/dynamic.xml
-.idea/**/uiDesigner.xml
-.idea/**/dbnavigator.xml
+**/.idea/**/dataSources/
+**/.idea/**/dataSources.ids
+**/.idea/**/dataSources.local.xml
+**/.idea/**/sqlDataSources.xml
+**/.idea/**/dynamic.xml
+**/.idea/**/uiDesigner.xml
+**/.idea/**/dbnavigator.xml
+**/.idea/vcs.xml
+**/.idea/codeStyles/**
+**/.idea/caches/**
+**/.idea/misc.xml
+**/.idea/dictionaries/
+.idea/misc.xml
 
 # Gradle
 .idea/**/gradle.xml
