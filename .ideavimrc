@@ -11,3 +11,5 @@ nnoremap cc :action CommentByLineComment<CR>
 vnoremap cc :action CommentByLineComment<CR>
 nnoremap == :action ReformatCode<CR>
 vnoremap == :action ReformatCode<CR>
+
+nnoremap <C-h> :action PreviousTab<CR>
