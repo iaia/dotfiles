@@ -119,3 +119,6 @@ alias magit='vim -c MagitOnly'
 alias bx='bundle exec'
 alias bi='bundle install'
 alias br='bin/rails'
+alias bu='bundle update'
+export PATH="$PATH:${HOME}/.pub-cache/bin"
+export XDG_CONFIG_HOME=$HOME/.config

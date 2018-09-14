@@ -34,5 +34,6 @@
         "<C-a>": false,
         "<C-f>": false
     },
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.minimap.enabled": false
 }
