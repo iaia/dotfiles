@@ -36,9 +36,6 @@ repo = 'kchmck/vim-coffee-script'
 repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
-repo = 'scrooloose/nerdtree'
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 
 [[plugins]]
@@ -64,12 +61,6 @@ repo = 'ayu-theme/ayu-vim'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'Xuyuanp/nerdtree-git-plugin'
-
-[[plugins]]
-repo = 'jistr/vim-nerdtree-tabs'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'

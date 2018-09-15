@@ -42038,12 +42038,16 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>616 527 918 401 0 0 1680 1027 </string>
+	<string>2909 1422 928 394 1680 447 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>553 226 1130 801 0 0 1680 1027 </string>
+	<string>296 88 1277 831 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>212 101 570 452 0 0 1680 1027 </string>
+	<string>526 99 1130 801 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>372 78 1130 801 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -42199,12 +42203,16 @@
 			<true/>
 			<key>Background Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0</real>
+				<real>0.1336517333984375</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.0</real>
+				<real>0.1336517333984375</real>
 				<key>Red Component</key>
-				<real>0.0</real>
+				<real>0.1336517333984375</real>
 			</dict>
 			<key>Background Image Location</key>
 			<string></string>
@@ -42305,12 +42313,16 @@
 			<false/>
 			<key>Foreground Color</key>
 			<dict>
+				<key>Alpha Component</key>
+				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.94901961088180542</real>
+				<real>0.7572174072265625</real>
+				<key>Color Space</key>
+				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.94901961088180542</real>
+				<real>0.7572174072265625</real>
 				<key>Red Component</key>
-				<real>0.94901961088180542</real>
+				<real>0.7572174072265625</real>
 			</dict>
 			<key>Guid</key>
 			<string>C96362C3-0D90-4495-B497-BACA10B6E387</string>
@@ -44781,6 +44793,8 @@
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>51CBC4C0-F423-4A64-9C45-A678658B7E3B</string>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>554018118.82150102</real>
 	<key>OpenArrangementAtStartup</key>
@@ -44835,9 +44849,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-07-23T06:21:12Z</date>
+	<date>2018-09-12T22:37:37Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.2.0</string>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -45920,9 +45936,9 @@
 		</data>
 	</array>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
-	<false/>
+	<true/>
 	<key>kCPKUseSystemColorPicker</key>
 	<false/>
 </dict>
