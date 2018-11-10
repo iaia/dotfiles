@@ -111,7 +111,6 @@ if [ -f "${HOME}/Library/google-cloud-sdk/path.zsh.inc" ]; then source "${HOME}/
 if [ -f "${HOME}/Library/google-cloud-sdk/completion.zsh.inc" ]; then source "${HOME}/Library/google-cloud-sdk/completion.zsh.inc"; fi
 
 export PATH="${HOME}/Library/flutter/bin:$PATH"
-
 export PATH="${HOME}/Library/Android/sdk/platform-tools:$PATH"
 alias kj='kotlinc-jvm'
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
