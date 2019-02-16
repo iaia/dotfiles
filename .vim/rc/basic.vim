@@ -68,7 +68,7 @@ set showtabline=2
 set foldmethod=marker
 
 " clipboardを使う
-set clipboard+=unnamed,autoselect
+set clipboard+=unnamed
 " set clipboard+=unnamedplus
 
 " mouseをoffに

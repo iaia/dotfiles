@@ -41998,6 +41998,8 @@
 	<real>148.7890625</real>
 	<key>LoadPrefsFromCustomFolder</key>
 	<true/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 0</string>
 	<key>NSNavLastRootDirectory</key>
 	<string>~/dotfiles</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
@@ -42038,16 +42040,23 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>1169 110 445 453 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame SharedPreferences</key>
+	<string>454 258 918 452 0 0 1680 1027 </string>
 	<string>616 571 770 429 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
+	<string>413 76 1130 801 0 0 1680 1027 </string>
 	<string>391 98 1130 801 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
+	<string>276 126 1290 901 0 0 1680 1027 </string>
 	<string>14 226 1130 801 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
-	<string>372 78 1130 801 0 0 1680 1027 </string>
+	<string>0 0 1610 1027 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 3</key>
+	<string>0 55 1680 927 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -42316,12 +42325,15 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
+				<real>0.9508209228515625</real>
 				<real>0.9319610595703125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
+				<real>0.9508209228515625</real>
 				<real>0.9319610595703125</real>
 				<key>Red Component</key>
+				<real>0.9508209228515625</real>
 				<real>0.9319610595703125</real>
 			</dict>
 			<key>Guid</key>
@@ -42720,6 +42732,7 @@
 			<key>Thin Strokes</key>
 			<integer>1</integer>
 			<key>Transparency</key>
+			<real>0.030409263959390864</real>
 			<real>0.032604298857868023</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
@@ -44796,11 +44809,19 @@
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
-	<string>51CBC4C0-F423-4A64-9C45-A678658B7E3B</string>
+	<string>02301589-60B5-40DB-83D9-04FFCA88370D</string>
+	<key>NoSyncLastTipTime</key>
+	<real>526647916.77060699</real>
 	<key>NoSyncPermissionToShowTip</key>
-	<false/>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>554018118.82150102</real>
+	<real>526310588.37957698</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+	</array>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenNoWindowsAtStartup</key>
@@ -44849,13 +44870,16 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/final.xml?shard=45</string>
+	<string>https://iterm2.com/appcasts/final.xml?shard=66</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
+	<date>2018-12-09T15:04:26Z</date>
 	<date>2019-01-04T00:20:05Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>SUSkippedVersion</key>
+	<string>3.2.6</string>
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
@@ -44891,6 +44915,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
+	<string>3.2.4</string>
 	<string>3.2.6</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>

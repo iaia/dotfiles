@@ -1,0 +1,6 @@
+set runtimepath+=~/.vim/
+runtime! rc/*.vim
+runtime! after/*.vim
+
+let g:nerdtree_tabs_open_on_console_startup = 0
+let g:loaded_nerdtree_git_status = 0
