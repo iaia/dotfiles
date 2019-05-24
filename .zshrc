@@ -35,7 +35,7 @@ export EDITOR=vim
 
 eval "$(rbenv init -)"
 
-export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 
 # PROMPT {{{
@@ -94,7 +94,7 @@ alias gm='git mergetool'
 alias gb='git branch'
 alias gco='git o @b'
 alias gpc='git pr checkout'
-alias gpr='git pull --rebase upstream master'
+alias gpr='git pull --rebase upstream $(git current-branch)'
 alias -g @b='`git branch -a | peco --prompt "GIT BRANCH>" | head -n 1 | sed -e "s/^\*\s*//g"`'
 alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|develop$' | xargs -I % git branch -d %"
 
@@ -123,3 +123,5 @@ alias br='bin/rails'
 alias bu='bundle update'
 export PATH="$PATH:${HOME}/.pub-cache/bin"
 export XDG_CONFIG_HOME=$HOME/.config
+export PATH="$PATH:${HOME}/work/src/java/flank/test_runner/bash/"
+
