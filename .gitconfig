@@ -11,6 +11,7 @@
 
 [core]
 	excludesfile = ~/.gitignore_global
+	autocrlf = input
 [alias]
 	o = checkout
 	lol = log --graph --decorate --pretty=oneline --all --abbrev-commit

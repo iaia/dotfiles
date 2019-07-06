@@ -1,39 +1,69 @@
 {
     "editor.fontFamily": "Ricty Diminished",
+    "files.autoSave": "afterDelay",
     "editor.fontSize": 14,
-
-    "vim.easymotion": true,
-    "vim.sneak": true,
-    "vim.incsearch": true,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "all",
     "vim.useSystemClipboard": true,
-    "vim.useCtrlKeys": true,
-    "vim.hlsearch": true,
-    "vim.insertModeKeyBindings": [
+    "vim.visualstar": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": ["j","j"],
+            "before": ["j", "j"],
             "after": ["<Esc>"]
-        }
-    ],
-    "vim.otherModesKeyBindingsNonRecursive": [
-        {
-            "before": ["<leader>","d"],
-            "after": ["d", "d"]
         },
         {
-            "before":["<C-n>"],
-            "after":[],
+            "before": ["\"", "\""],
+            "after": ["\"", "\"", "<LEFT>"]
+        },
+        {
+            "before": ["'", "'"],
+            "after": ["'", "'", "<LEFT>"]
+        },
+        {
+            "before": ["(", ")"],
+            "after": ["(", ")", "<LEFT>"]
+        },
+        {
+            "before": ["[", "]"],
+            "after": ["[", "]", "<LEFT>"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-h>"
+            ],
             "commands": [
-                {
-                    "command": ":nohl"
-                }
+                "workbench.action.previousEditorInGroup"
+            ]
+        },
+        {
+            "before": [
+                "<C-l>"
+            ],
+            "commands": [
+                "workbench.action.nextEditorInGroup"
             ]
         }
     ],
-    "vim.leader": "<space>",
-    "vim.handleKeys":{
-        "<C-a>": false,
-        "<C-f>": false
-    },
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "none",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "explorer.confirmDragAndDrop": false,
+    "git.enableSmartCommit": true,
+    "workbench.editor.closeEmptyGroups": false,
+    "sync.autoDownload": true,
+    "sync.autoUpload": true,
+    "sync.gist": "8a32c7a89f32e80ee3b26e4b5e4160a0",
+    "sync.forceDownload": false,
     "workbench.startupEditor": "newUntitledFile",
-    "editor.minimap.enabled": false
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.colorCustomizations": {
+        "tab.activeBorder": "#7cfc00",
+        "editorGroup.border": "#1e90ff",
+        "editorCursor.foreground": "#fe39dc"
+    }
 }

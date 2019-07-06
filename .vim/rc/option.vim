@@ -69,3 +69,7 @@ function! s:Jq(...)
     endif
     execute "%! jq \"" . l:arg . "\""
 endfunction
+
+autocmd ColorScheme * highlight NormalNC guifg=#0000ff guibg=#ff0000
+autocmd WinEnter,BufWinEnter * set wincolor=#00ff00
+autocmd WinLeave * set wincolor=NormalNC
