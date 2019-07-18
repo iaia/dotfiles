@@ -101,6 +101,7 @@ alias git-branch-delete="git branch --merged master | grep -vE '^\*|master$|deve
 alias bx='bundle exec'
 alias bi='bundle install'
 alias br='bin/rails'
+alias bu='bundle update'
 
 alias ctags="`brew --prefix`/bin/ctags"
 alias ctags-ruby-refresh='ctags --langmap=RUBY:.rb --exclude="*.js"  --exclude=".git*" -R .'
@@ -117,11 +118,12 @@ alias kj='kotlinc-jvm'
 export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
 export TERMINAL_NOTIFIER_BIN="/usr/local/bin/terminal-notifier"
 alias magit='vim -c MagitOnly'
-alias bx='bundle exec'
-alias bi='bundle install'
-alias br='bin/rails'
-alias bu='bundle update'
 export PATH="$PATH:${HOME}/.pub-cache/bin"
 export XDG_CONFIG_HOME=$HOME/.config
 export PATH="$PATH:${HOME}/work/src/java/flank/test_runner/bash/"
 
+
+alias d='docker'
+alias dc='docker-compose'
+alias dce='docker-compose exec'
+alias dces='docker-compose exec server'
