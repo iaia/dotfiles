@@ -1,34 +1,121 @@
 {
     "editor.fontFamily": "Ricty Diminished",
-    "files.autoSave": "afterDelay",
     "editor.fontSize": 14,
     "editor.tabSize": 2,
     "editor.renderWhitespace": "all",
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "none",
+    // Controls if quick suggestions should show up while typing
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "editor.quickSuggestionsDelay": 10,
+
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.tabSizing": "shrink",
+    "workbench.editor.closeEmptyGroups": false,
+    "workbench.editor.enablePreview": false,
+
+    "explorer.confirmDragAndDrop": false,
+    "terminal.integrated.cursorBlinking": true,
+    "git.enableSmartCommit": true,
+
+    // plugins
+    // plugins, ruby
+    "ruby.format": "rubocop",
+    "ruby.useBundler": true,
+    "ruby.rubocop.useBundler": true,
+    "[ruby]": {
+        "editor.defaultFormatter": "rebornix.ruby"
+    },
+    // plugins, sync
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.gist": "8a32c7a89f32e80ee3b26e4b5e4160a0",
+    "sync.forceDownload": false,
+
+    // plugins, typescript
+    "typescript.updateImportsOnFileMove.enabled": "always",
+
+    // plugins, json
+    "json.format.enable": false ,
+
+    // plugins, vim
     "vim.useSystemClipboard": true,
     "vim.visualstar": true,
+    "vim.leader": "<space>",
     "vim.insertModeKeyBindingsNonRecursive": [
         {
-            "before": ["j", "j"],
-            "after": ["<Esc>"]
+            "before": [
+                "\"",
+                "\""
+            ],
+            "after": [
+                "\"",
+                "\"",
+                "<LEFT>"
+            ]
         },
         {
-            "before": ["\"", "\""],
-            "after": ["\"", "\"", "<LEFT>"]
+            "before": [
+                "'",
+                "'"
+            ],
+            "after": [
+                "'",
+                "'",
+                "<LEFT>"
+            ]
         },
         {
-            "before": ["'", "'"],
-            "after": ["'", "'", "<LEFT>"]
+            "before": [
+                "(",
+                ")"
+            ],
+            "after": [
+                "(",
+                ")",
+                "<LEFT>"
+            ]
         },
         {
-            "before": ["(", ")"],
-            "after": ["(", ")", "<LEFT>"]
+            "before": [
+                "[",
+                "]"
+            ],
+            "after": [
+                "[",
+                "]",
+                "<LEFT>"
+            ]
         },
         {
-            "before": ["[", "]"],
-            "after": ["[", "]", "<LEFT>"]
+            "before": [
+                "<",
+                ">"
+            ],
+            "after": [
+                "<",
+                ">",
+                "<LEFT>"
+            ]
         },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ]
+        },
         {
             "before": [
                 "<C-h>"
@@ -44,26 +131,62 @@
             "commands": [
                 "workbench.action.nextEditorInGroup"
             ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<space>"
+            ],
+            "commands": [
+                "git.openChange"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g"
+            ],
+            "commands": [
+                "editor.action.format"
+            ],
+        },
+        {
+            "before": [
+                "<C-]>"
+            ],
+            "commands": [
+                "extension.ctag_search"
+            ],
+        },
+        {
+          "before": [":", "w"],
+          "after": [],
+          "commands": [{
+            "command": "workbench.action.files.save",
+            "args": []
+          }]
         }
     ],
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
-    "editor.minimap.enabled": false,
-    "editor.wordWrap": "on",
-    "editor.wrappingIndent": "none",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "explorer.confirmDragAndDrop": false,
-    "git.enableSmartCommit": true,
-    "workbench.editor.closeEmptyGroups": false,
-    "sync.autoDownload": true,
-    "sync.autoUpload": true,
-    "sync.gist": "8a32c7a89f32e80ee3b26e4b5e4160a0",
-    "sync.forceDownload": false,
-    "workbench.startupEditor": "newUntitledFile",
-    "workbench.editor.tabSizing": "shrink",
+    "vim.statusBarColors.normal": ["#007acc", "#ffffff"],
+    "vim.statusBarColors.insert": "#BF616A",
     "workbench.colorCustomizations": {
         "tab.activeBorder": "#7cfc00",
         "editorGroup.border": "#1e90ff",
-        "editorCursor.foreground": "#fe39dc"
-    }
+        "editorCursor.foreground": "#fe39dc",
+        "editorCursor.background": "#feffff",
+        "titleBar.activeBackground": "#007acc",
+        "titleBar.inactiveBackground": "#35323207",
+        "statusBar.background": "#007acc",
+        "statusBar.noFolderBackground": "#007acc",
+        "statusBar.debuggingBackground": "#007acc",
+        "statusBar.foreground": "#ffffff"
+    },
+    "editor.snippetSuggestions": "none",
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "emmet.showExpandedAbbreviation": "never",
+    "editor.tabCompletion": "on",
+    "AllAutocomplete.cycleOpenDocumentsOnLaunch": true,
+    "editor.formatOnSave": true,
+    "html.format.endWithNewline": true,
+    "files.insertFinalNewline": true,
 }
