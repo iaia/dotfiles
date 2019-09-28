@@ -151,14 +151,6 @@
             ],
         },
         {
-            "before": [
-                "<C-]>"
-            ],
-            "commands": [
-                "extension.ctag_search"
-            ],
-        },
-        {
           "before": [":", "w"],
           "after": [],
           "commands": [{
@@ -187,6 +179,15 @@
     "editor.tabCompletion": "on",
     "AllAutocomplete.cycleOpenDocumentsOnLaunch": true,
     "editor.formatOnSave": true,
+    "outline.problems.enabled": false,
+    "outline.problems.colors": false,
+    "outline.problems.badges": false,
+    "outline.icons": false,
+    "explorer.confirmDelete": false,
+    "editor.acceptSuggestionOnEnter": "off",
     "html.format.endWithNewline": true,
+    "workbench.editor.revealIfOpen": true,
+    "sync.forceUpload": true,
     "files.insertFinalNewline": true,
+    "terminal.integrated.fontSize": 14,
 }
