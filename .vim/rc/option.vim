@@ -71,5 +71,17 @@ function! s:Jq(...)
 endfunction
 
 autocmd ColorScheme * highlight NormalNC guifg=#0000ff guibg=#ff0000
-autocmd WinEnter,BufWinEnter * set wincolor=#00ff00
-autocmd WinLeave * set wincolor=NormalNC
+" autocmd WinEnter,BufWinEnter * set wincolor=#00ff00
+" autocmd WinLeave * set wincolor=NormalNC
+" 
+" 
+" "FOLDS:
+" "------
+" " Automatically save folds
+" augroup AutoSaveFolds
+"   autocmd!
+"   au BufWinLeave ?* mkview 1
+"   au BufWinEnter ?* silent loadview 1
+" augroup END
+
+autocmd Filetype json :IndentLinesDisable

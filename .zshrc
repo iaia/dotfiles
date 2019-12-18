@@ -127,3 +127,4 @@ alias d='docker'
 alias dc='docker-compose'
 alias dce='docker-compose exec'
 alias dces='docker-compose exec server'
+export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
