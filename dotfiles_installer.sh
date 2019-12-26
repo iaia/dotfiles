@@ -18,3 +18,5 @@ rm ~/dotfiles/installer.sh
 
 mkdir ~/.ssh/
 mkdir ~/.vim/.vimundo
+
+# brew bundle
