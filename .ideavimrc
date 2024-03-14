@@ -1,6 +1,8 @@
 source ~/.vim/rc/map.vim
 source ~/.vim/rc/basic.vim
 
+set clipboard=unnamed
+
 nnoremap <Space>e :action SearchEverywhere<CR>
 nnoremap <Space>g :action FindInPath<CR>
 nnoremap gd :action GotoDeclaration<CR>
@@ -13,3 +15,16 @@ nnoremap == :action ReformatCode<CR>
 vnoremap == :action ReformatCode<CR>
 
 nnoremap <C-h> :action PreviousTab<CR>
+
+sethandler <C-A> a:vim
+sethandler <C-B> a:vim
+sethandler <C-F> a:vim
+sethandler <C-H> a:vim
+sethandler <C-J> a:vim
+sethandler <C-L> a:ide
+sethandler <C-N> a:vim
+sethandler <C-P> a:vim
+sethandler <C-R> a:vim
+sethandler <C-V> a:vim
+sethandler <C-]> a:ide
+set clipboard^=ideaput
