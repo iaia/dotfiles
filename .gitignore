@@ -7,3 +7,10 @@ installer.sh
 *.swp
 .docker/machine/
 .vim/templates/template_daily_reports.mkd
+/.docker/application-template/logs/com.docker.log
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/.gitignore
+/.idea/dotfiles.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml

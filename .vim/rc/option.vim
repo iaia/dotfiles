@@ -84,4 +84,3 @@ autocmd ColorScheme * highlight NormalNC guifg=#0000ff guibg=#ff0000
 "   au BufWinEnter ?* silent loadview 1
 " augroup END
 
-autocmd Filetype json :IndentLinesDisable

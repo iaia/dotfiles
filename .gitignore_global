@@ -34,8 +34,8 @@ fabric.properties
 .idea/httpRequests
 
 gradle/
-gradlew
-gradlew.bat
+# gradlew
+# gradlew.bat
 
 .vscode
 .tags

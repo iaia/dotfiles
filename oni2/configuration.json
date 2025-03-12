@@ -8,7 +8,7 @@
   "editor.insertSpaces": false,
   "editor.lineNumbers": "on",
   "editor.matchBrackets": true,
-  "editor.minimap.enabled": true,
+  "editor.minimap.enabled": false,
   "editor.minimap.maxColumn": 120,
   "editor.minimap.showSlider": true,
   "editor.renderIndentGuides": true,
@@ -25,5 +25,5 @@
   "workbench.statusBar.visible": true,
   "workbench.tree.indent": 2,
   "vim.useSystemClipboard": true,
-  "experimental.editor.cursorSmoothCaretAnimation": true
+  "experimental.editor.cursorSmoothCaretAnimation": false
 }

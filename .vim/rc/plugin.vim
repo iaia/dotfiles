@@ -105,3 +105,6 @@ let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_prompt_mappings = {
   \ 'PrtClearCache()':      ['<c-r>'],
   \ }
+
+" json のダブルクォーテーションを表示する
+let g:indentLine_conceallevel = 0

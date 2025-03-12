@@ -81,7 +81,7 @@ function chpwd() { echo -ne "\033]0;$(pwd | rev | awk -F \/ '{print "/"$1"/"$2}'
 
 
 # alias
-alias vim='/usr/local/bin/vim'
+alias vim='/opt/homebrew/bin/vim'
 alias vi='vim'
 alias vin='vim'
 alias v='vim'
@@ -128,3 +128,6 @@ alias dc='docker-compose'
 alias dce='docker-compose exec'
 alias dces='docker-compose exec server'
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+alias wakewin="sh work/other/wakeonlan-repeat.sh"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
